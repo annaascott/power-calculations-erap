@@ -46,34 +46,38 @@ print(result)
 
 # I have 80.3% white, 10.8% Asian, 5.4% black, 2.4% mixed, and 1.1% other in my population
 
-# white plus Asian (80.3% and 10.8%) = 91.1
+# white : Asian (80.3% and 10.8%) = 8:1
 
-n <- 91.1
+n <- 9
 result <- sqrt((1/n) * (n-1)/n)
 print(result)
-#result is 0.1041943
+#result is 0.3142697
 
-# white plus black (80.3% and 5.4%) = 85.7
+# white : black (80.3% and 5.4%) = 16:1
 
-n <- 85.7
+n <- 17
 result <- sqrt((1/n) * (n-1)/n)
 print(result)
-# result is 0.1073893
+# result is 0.2352941
 
-# white plus mixed (80.3% and 2.4%) = 82.7
+# white : mixed (80.3% and 2.4%) = 33:1
 
-n <- 82.7
+n <- 34
 result <- sqrt((1/n) * (n-1)/n)
 print(result)
-# result is 0.1092963
+# result is 0.1689577
 
-# white plus other (80.3% and 1.1%) = 81.4
-n <- 81.4
+# white : other (80.3% and 1.1%) = 73:1
+n <- 74
 result <- sqrt((1/n) * (n-1)/n)
 print(result)
-# result is 0.1101548
+# result is 0.1154595
 
-# so for white vs each minority group, the standard deviation (SD) is similar, at 0.1
+# so standard deviation (SD) is 
+# white vs asian 0.3
+# white vs black 0.2
+# white vs mixed 0.2
+# white vs other 0.1
 
 #--------------------------------------------------------------------------------------------------
 
@@ -110,7 +114,8 @@ n*0.011
 # n= 2573717
 
 
-# stpower cox, n(2573717) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+
+# . stpower cox, n(2573717) power(.8) alpha(0.05) hr failp(0.006) sd(0.3)
 # 
 # Estimated hazard ratio for Cox PH regression
 # Wald test, hazard metric
@@ -119,7 +124,7 @@ n*0.011
 # Input parameters:
 #   
 #   alpha =    0.0500  (two sided)
-# sd =    0.1000
+# sd =    0.3000
 # N =   2573717
 # power =    0.8000
 # Pr(event) =    0.0060
@@ -127,7 +132,8 @@ n*0.011
 # Estimated number of events and hazard ratio:
 #   
 #   E =     15443
-# hratio =    0.7982
+# hratio =    0.9276
+
 
 # WHITE VS BLACK
 
@@ -136,7 +142,8 @@ n*0.011
 # n= 2421158
 
 
-# stpower cox, n(2421158) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+
+# . stpower cox, n(2421158) power(.8) alpha(0.05) hr failp(0.006) sd(0.2)
 # 
 # Estimated hazard ratio for Cox PH regression
 # Wald test, hazard metric
@@ -145,7 +152,7 @@ n*0.011
 # Input parameters:
 #   
 #   alpha =    0.0500  (two sided)
-# sd =    0.1000
+# sd =    0.2000
 # N =   2421158
 # power =    0.8000
 # Pr(event) =    0.0060
@@ -153,7 +160,8 @@ n*0.011
 # Estimated number of events and hazard ratio:
 #   
 #   E =     14527
-# hratio =    0.7926
+# hratio =    0.8903
+
 
 
 # WHITE VS MIXED
@@ -164,7 +172,7 @@ n*0.011
 # n= 2336404
 
 
-# . stpower cox, n(2336404) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+# . stpower cox, n(2336404) power(.8) alpha(0.05) hr failp(0.006) sd(0.2)
 # 
 # Estimated hazard ratio for Cox PH regression
 # Wald test, hazard metric
@@ -173,7 +181,7 @@ n*0.011
 # Input parameters:
 #   
 #   alpha =    0.0500  (two sided)
-# sd =    0.1000
+# sd =    0.2000
 # N =   2336404
 # power =    0.8000
 # Pr(event) =    0.0060
@@ -181,7 +189,8 @@ n*0.011
 # Estimated number of events and hazard ratio:
 #   
 #   E =     14019
-# hratio =    0.7893
+# hratio =    0.8884
+
 
 # WHITE VS OTHER
 
@@ -215,6 +224,9 @@ n*0.011
 
 # RESULTS
 
-# The study would therefore have 80% power to detect a hazard ratio of 0.8 for the risk of 
-# developing an eating disorder in someone from an ethnic minority with eczema, compared to someone
-# who is white and has eczema, with a two-sided significance-level of 0.05.
+# The study would therefore have 80% power, with a two-sided significance-level of 0.05
+# to detect risk of developing an eating disorder, with hazard ratios of 
+# 0.93 for a white vs asian person with eczema
+# 0.89 for a white vs black or mixed ethnicity person with eczema
+# or 0.79 for white vs other ethnicity person with eczema 
+
