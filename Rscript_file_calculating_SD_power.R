@@ -28,14 +28,155 @@ result <- sqrt((1/n) * (n-1)/n)
 print(result)
 #result is 0.1041943
 
+# white and black (80.3% and 5.4%) = 85.7
+
+n <- 85.7
+result <- sqrt((1/n) * (n-1)/n)
+print(result)
+# result is 0.1073893
+
+# white and mixed (80.3% and 2.4%) = 82.7
+
+n <- 82.7
+result <- sqrt((1/n) * (n-1)/n)
+print(result)
+# result is 0.1092963
+
+# white and other (80.3% and 1.1%) = 81.4
+n <- 81.4
+result <- sqrt((1/n) * (n-1)/n)
+print(result)
+# result is 0.1101548
+
+# so for white vs each minority group, the standard deviation (SD) is approximately 0.11
+
 # in stata using stpower cox (as there is no direct equivalent in R)
 # calculate power based on fixed sample size
 # n is the population sample size
 # power can be set to 0.8 (80%) or 0.9 (90%) and two sided alpha (significance level) to 0.05
-# hrfailp is the probability of getting outcome (example is 0.094 or 9.4%) 
+# hrfailp is the probability of getting outcome (example for eating disorders 0.006 or 0.6%) 
 
-# stpower cox, n() power(.8) alpha(0.05) hr failp() sd()
+# input this into stata: stpower cox, n() power(.8) alpha(0.05) hr failp() sd()
 
-# 3,513,875 individuals meet our definition of eczema, who were eligible for matching
+# to calculate n, 3513875 individuals meet our definition of eczema and are eligible for matching
+# 2825156 have available ethnicity information, so I estimate that 
+# # 2268600 of these are white (80.3%)
+# # 305117 are Asian (10.8%)
+# # 152558 are black (5.4%)
+# # 67804 are mixed (2.4%)
+# # 31077 are other (1.1%)
 
-# stpower cox, n() power(.8) alpha(0.05) hr failp(0.0) sd(0.1)
+n <- 2825156
+ n* 0.803
+# 2268600
+n*0.108
+# 305116.8
+n*0.054
+# 152558.4
+n*0.024
+# 67803.74
+n*0.011
+
+# stpowercox to calculate HR detectable for eating disorder prevalence in white vs asian
+# n = 
+2268600+305117
+# n= 2573717
+
+
+# stpower cox, n(2573717) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+# 
+# Estimated hazard ratio for Cox PH regression
+# Wald test, hazard metric
+# H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+# 
+# Input parameters:
+#   
+#   alpha =    0.0500  (two sided)
+# sd =    0.1000
+# N =   2573717
+# power =    0.8000
+# Pr(event) =    0.0060
+# 
+# Estimated number of events and hazard ratio:
+#   
+#   E =     15443
+# hratio =    0.7982
+
+
+
+# stpowercox to calculate HR detectable for eating disorder prevalence in white vs black
+# n = 
+2268600+152558
+# n= 2421158
+
+
+# stpower cox, n(2421158) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+# 
+# Estimated hazard ratio for Cox PH regression
+# Wald test, hazard metric
+# H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+# 
+# Input parameters:
+#   
+#   alpha =    0.0500  (two sided)
+# sd =    0.1000
+# N =   2421158
+# power =    0.8000
+# Pr(event) =    0.0060
+# 
+# Estimated number of events and hazard ratio:
+#   
+#   E =     14527
+# hratio =    0.7926
+
+
+# stpowercox to calculate HR detectable for eating disorder prevalence in white vs mixed
+# n = 
+2268600+67804
+# n= 2336404
+
+
+# . stpower cox, n(2336404) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+# 
+# Estimated hazard ratio for Cox PH regression
+# Wald test, hazard metric
+# H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+# 
+# Input parameters:
+#   
+#   alpha =    0.0500  (two sided)
+# sd =    0.1000
+# N =   2336404
+# power =    0.8000
+# Pr(event) =    0.0060
+# 
+# Estimated number of events and hazard ratio:
+#   
+#   E =     14019
+# hratio =    0.7893
+
+
+# stpowercox to calculate HR detectable for eating disorder prevalence in white vs other
+# n = 
+2268600+31077
+# n= 2299677
+
+
+# . stpower cox, n(2299677) power(.8) alpha(0.05) hr failp(0.006) sd(0.1)
+# 
+# Estimated hazard ratio for Cox PH regression
+# Wald test, hazard metric
+# H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+# 
+# Input parameters:
+#   
+#   alpha =    0.0500  (two sided)
+# sd =    0.1000
+# N =   2299677
+# power =    0.8000
+# Pr(event) =    0.0060
+# 
+# Estimated number of events and hazard ratio:
+#   
+#   E =     13799
+# hratio =    0.7878
