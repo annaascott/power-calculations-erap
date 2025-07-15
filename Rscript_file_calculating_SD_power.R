@@ -138,7 +138,7 @@ n*0.011
 #   E =     15443
 # hratio =    0.9276
 
-# HR is 0.93 (protective) or 1/0.93 = 1.08 
+# HR is 0.93 (protective) or 1/0.93 = 1.08 for asian vs white
 
 
 # WHITE VS BLACK
@@ -262,7 +262,7 @@ n*0.011
 # The study would therefore have 80% power, with a two-sided significance-level of 0.05
 # to detect an effect size (HR) of at least:
 #    1.08 for the HR comparing the risk of eating disorders between Asian vs White people with eczema
-#    1.12 for a white vs black or mixed ethnicity person with eczema
-#    or 1.27 for white vs 'other' ethnicity person with eczema 
-#    or 1.05 for white vs all other ethnicities combined
+#    1.12 for a black or mixed ethnicity person with eczema vs white
+#    or 1.27 for 'other' ethnicity person with eczema vs white
+#    or 1.05 for all other (non-white) ethnicities combined vs white
 
