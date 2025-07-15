@@ -233,25 +233,26 @@ n*0.011
 
 # WHITE VS ALL OTHER ETHNICITIES COMBINED
 
-stpower cox, n(2825156) power(.8) alpha(0.05) hr failp(0.006) sd(0.4)
+# stpower cox, n(2825156) power(.8) alpha(0.05) hr failp(0.006) sd(0.4)
+# 
+# Estimated hazard ratio for Cox PH regression
+# Wald test, hazard metric
+# H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+# 
+# Input parameters:
+#   
+#   alpha =    0.0500  (two sided)
+# sd =    0.4000
+# N =   2825156
+# power =    0.8000
+# Pr(event) =    0.0060
+# 
+# Estimated number of events and hazard ratio:
+#   
+#   E =     16951
+# hratio =    0.9476
 
-Estimated hazard ratio for Cox PH regression
-Wald test, hazard metric
-H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
-
-Input parameters:
-  
-  alpha =    0.0500  (two sided)
-sd =    0.4000
-N =   2825156
-power =    0.8000
-Pr(event) =    0.0060
-
-Estimated number of events and hazard ratio:
-  
-  E =     16951
-hratio =    0.9476
-# HR is 0.95 (protective) or 1/0.95 = 1.05
+# # HR is 0.95 (protective) or 1/0.95 = 1.05
 
 #--------------------------------------------------------------------------------------------------
 
@@ -260,7 +261,8 @@ hratio =    0.9476
 
 # The study would therefore have 80% power, with a two-sided significance-level of 0.05
 # to detect an effect size (HR) of at least:
-#    1.08 for the HR comparing the risk of eating disorders between Asian vs White
+#    1.08 for the HR comparing the risk of eating disorders between Asian vs White people with eczema
 #    1.12 for a white vs black or mixed ethnicity person with eczema
-#    or 1.27 for white vs other ethnicity person with eczema 
+#    or 1.27 for white vs 'other' ethnicity person with eczema 
+#    or 1.05 for white vs all other ethnicities combined
 
