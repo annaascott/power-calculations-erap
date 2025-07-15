@@ -7,7 +7,7 @@
 # prevalence of 0.6%, for this calculation
 
 # I will compare power to detect this outcome between white, and each minority ethnic group respectively
-# i.e. white vs Asian, white vs black, white vs mixed, and white vs other
+# i.e. white vs Asian, white vs black, white vs mixed, white vs other, and white vs non-white
 # the minority ethnic group being 'exposed' and white being 'unexposed'
 
 #--------------------------------------------------------------------------------------------------
@@ -73,11 +73,15 @@ result <- sqrt((1/n) * (n-1)/n)
 print(result)
 # result is 0.1154595
 
+# white: all minoritised ethnicities combined (80.3% and 19.7%) = 4:1
+# SD is 0.4
+
 # so standard deviation (SD) is 
 # white vs asian 0.3
 # white vs black 0.2
 # white vs mixed 0.2
 # white vs other 0.1
+# white vs all minoritised ethnicities combined 0.4
 
 #--------------------------------------------------------------------------------------------------
 
@@ -105,7 +109,7 @@ n*0.011
 #---------------------------------------------------------------------------------------------
 
 # now I use stpowercox to calculate the HR detectable for eating disorder prevalence in white vs 
-# each minority group individually
+# each minority group individually, and white vs all other ethnicities combined
 
 # WHITE VS ASIAN
 
@@ -226,6 +230,28 @@ n*0.011
 # hratio =    0.7878
 
 # HR is 0.79 (protective) or 1/0.79 = 1.27
+
+# WHITE VS ALL OTHER ETHNICITIES COMBINED
+
+stpower cox, n(2825156) power(.8) alpha(0.05) hr failp(0.006) sd(0.4)
+
+Estimated hazard ratio for Cox PH regression
+Wald test, hazard metric
+H0: [b1, b2, ..., bp] = [0, b2, ..., bp]
+
+Input parameters:
+  
+  alpha =    0.0500  (two sided)
+sd =    0.4000
+N =   2825156
+power =    0.8000
+Pr(event) =    0.0060
+
+Estimated number of events and hazard ratio:
+  
+  E =     16951
+hratio =    0.9476
+# HR is 0.95 (protective) or 1/0.95 = 1.05
 
 #--------------------------------------------------------------------------------------------------
 
