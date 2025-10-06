@@ -265,7 +265,7 @@ n*0.011
 # RESULTS
 
 
-# The study would therefore have 80% power, with a two-sided significance-level of 0.05
+# The study would therefore have 80% power, with a two-sided significance-level of 0.002
 # to detect an effect size (HR) of at least:
 #    1.11 for the HR comparing the risk of eating disorders between Asian vs White people with eczema
 #    1.18 for a black or mixed ethnicity person with eczema vs white
