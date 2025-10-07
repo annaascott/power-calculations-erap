@@ -85,7 +85,7 @@ print(result)
 
 #--------------------------------------------------------------------------------------------------
 
-# to calculate n, 3513875 individuals meet our definition of eczema and are eligible for matching
+# to calculate n, 3513875* individuals meet our definition of eczema and are eligible for matching
 # but 80.4% have available ethnicity information, so I estimate that:
 
 # 2825156 people with eczema have available ethnicity information
@@ -105,6 +105,11 @@ n*0.054
 n*0.024
 # 67803.74
 n*0.011
+
+# * this n is number of people w eczema eligible for linkage w HES, from this paper:
+# Mapping risks of hospital-recorded health conditions in people with eczema
+# Julian Matthewman, et al
+# medRxiv 2025.03.24.25324470; doi: https://doi.org/10.1101/2025.03.24.25324470 
 
 #---------------------------------------------------------------------------------------------
 
